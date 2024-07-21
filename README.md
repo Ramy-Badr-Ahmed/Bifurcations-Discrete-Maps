@@ -34,6 +34,9 @@ To analyse a specific map, run the corresponding script in the Maps directory. Y
 
 Interactive plots will be generated and saved as offline HTML files within each map's directory.
 
+>[!Note]
+> Some plots have been uploaded to the `Maps` directories for reference.
+
 ```shell
 python Maps/LogisticMap/main.py
 
