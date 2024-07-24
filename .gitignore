@@ -1,5 +1,5 @@
 .venv/
 .idea
-Maps/Logistic Map/*.html
-Maps/Tent Map/*.html
-Maps/Sine Map/*.html
+"Maps/Logistic Map/*.html"
+"Maps/Tent Map/*.html"
+"Maps/Sine Map/*.html"
