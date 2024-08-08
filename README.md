@@ -52,27 +52,43 @@ from utils.plotting import saveInteractivePlot
 import datetime
 
 # Parameters for logistic map
-rhoMin = 3.57
-rhoMax = 4.0
-stepSize = 1e-4
-numTransient = 300
-numPlotPoints = 300
-numIterationsLyapunov = 200
-timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+params = {
+    'paramMin': 3.57,  # bifurcation parameter
+    'paramMax': 4.0,   
+    'stepSize': 1e-3,
+    'numTransient': 300,
+    'numPlotPoints': 300,
+    'numIterationsLyapunov': 200
+}
 
-logisticMap = LogisticMap(rhoMin, rhoMax, stepSize, numTransient, numPlotPoints, numIterationsLyapunov)
+logisticMap = LogisticMap(**params)
 
 # Generate and save bifurcation diagram
 rhoValues, xValues, hoverText = logisticMap.generateBifurcationData()
 
-saveInteractivePlot(rhoValues, xValues, hoverText, 'Logistic Map Bifurcation Diagram',
-                    'Bifurcation Parameter (rho)', 'System States x(n)',
-                    f'logisticMap_bifurcation_{timestamp}.html', markerSize = 0.05, opacity = 0.6)
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+plotParams = {
+    'title': 'Logistic Map Bifurcation Diagram',
+    'xAxisTitle': 'Bifurcation Parameter (rho)',
+    'yAxisTitle': 'System States x(n)',
+    'fileName': f'logisticMap_bifurcation_{timestamp}.html',
+    'markerSize': 0.05,
+    'opacity': 0.6,
+}
+
+saveInteractivePlot(rhoValues, xValues, hoverText, **plotParams)
 
 # Generate and save Lyapunov exponent plot
 rhoValuesLyapunov, lyapunovExponents, lyapunovHoverText = logisticMap.generateLyapunovData()
 
-saveInteractivePlot(rhoValuesLyapunov, lyapunovExponents, lyapunovHoverText, 'Logistic Map Lyapunov Exponent',
-                    'Bifurcation Parameter (rho)', 'Lyapunov Exponent',
-                    f'logisticMap_lyapunov_exponent_{timestamp}.html', mode='lines')
+plotParams = {
+    'title': 'Logistic Map Lyapunov Exponent',
+    'xAxisTitle': 'Bifurcation Parameter (rho)',
+    'yAxisTitle': 'Lyapunov Exponent',
+    'fileName': f'logisticMap_lyapunov_exponent_{timestamp}.html',
+    'mode': 'lines'
+}
+
+saveInteractivePlot(rhoValuesLyapunov, lyapunovExponents, lyapunovHoverText, **plotParams)
 ```
