@@ -1,6 +1,6 @@
-![Python](https://img.shields.io/badge/Python-3670A0?style=plastic&logo=python&logoColor=ffdd54)  
+![Python](https://img.shields.io/badge/Python-3670A0?style=plastic&logo=python&logoColor=ffdd54) ![GitHub](https://img.shields.io/github/license/Ramy-Badr-Ahmed/Bifurcations?style=plastic)
 
-![GitHub](https://img.shields.io/github/license/Ramy-Badr-Ahmed/Bifurcations)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13276873.svg)](https://doi.org/10.5281/zenodo.13276873)
 
 # Bifurcation Diagrams for Discrete-Time Maps
 
